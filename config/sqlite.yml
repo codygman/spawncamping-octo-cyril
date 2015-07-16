@@ -1,0 +1,20 @@
+Default: &defaults
+  database: ghci-auto-reload-test.sqlite3
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: ghci-auto-reload-test_test.sqlite3
+  <<: *defaults
+
+Staging:
+  database: ghci-auto-reload-test_staging.sqlite3
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: ghci-auto-reload-test_production.sqlite3
+  poolsize: 100
+  <<: *defaults
